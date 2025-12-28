@@ -2,3 +2,4 @@ node_modules
 src/analysis_engine/__pycache__/
 src/oas/__pycache__/
 src/smartdoc/__pycache__/
+.env
