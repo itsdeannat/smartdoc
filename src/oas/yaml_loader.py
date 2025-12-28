@@ -1,5 +1,4 @@
 import yaml
-from openai import OpenAI
 
 # Load and parse a sample OpenAPI Specification (OAS) YAML file
 def load_file (path: str) -> dict:
