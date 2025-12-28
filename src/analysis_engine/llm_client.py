@@ -1,10 +1,15 @@
 import os
+from dotenv import load_dotenv
 import yaml
 from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+load_dotenv(dotenv_path=".env")
 
 def analyze_spec(content: dict):
+    
+    print("API key loaded:", bool(os.getenv("OPENAI_API_KEY")))
+    
+    client = OpenAI()
     
     serialized_oas = yaml.dump(content, sort_keys=False)
 
