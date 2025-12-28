@@ -1,9 +1,7 @@
 import os
 from openai import OpenAI
 
-API_KEY = os.getenv('OPENAI_API_KEY')
-
-client = OpenAI()
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 def analyze_spec(content: str):
 
