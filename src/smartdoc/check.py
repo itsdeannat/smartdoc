@@ -14,13 +14,16 @@ def find_file(path: str):
 
 
 def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")]):
-      
+    """
+    Analyzes an OAS file for documentation quality issues using an LLM.
+    """ 
     if not file:
         typer.echo("No file path provided. Please specify the path to the OAS file.")
         raise typer.Exit(code=1)
     else:
         find_file(file)
         content = yaml_loader.load_file(file)
+        print(f"Checking the OAS file {file} for issues...")
         
     llm_client.analyze_spec(content)
     
