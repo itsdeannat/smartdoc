@@ -1,11 +1,11 @@
-import analysis_engine.prompter as prompter
-import oas.file_handler as file_handler
+import analysis_engine.llm_client as llm_client
+import oas.yaml_loader as yaml_loader
 
 
 def main():
     oas_path = "sample_oas.yml"
-    content = file_handler.load_file(oas_path)
-    prompter.analyze_content(content)
+    content = yaml_loader.load_file(oas_path)
+    llm_client.analyze_spec(content)
     
     
 if __name__ == "__main__":
