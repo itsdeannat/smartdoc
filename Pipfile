@@ -8,6 +8,7 @@ openai = "*"
 pyyaml = "*"
 typer = "*"
 smartdoc = {file = ".", editable = true}
+dotenv = "*"
 
 [dev-packages]
 
