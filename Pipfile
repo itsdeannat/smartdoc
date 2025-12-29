@@ -7,8 +7,8 @@ name = "pypi"
 openai = "*"
 pyyaml = "*"
 typer = "*"
-smartdoc = {file = ".", editable = true}
 dotenv = "*"
+smartdoc = {file = ".", editable = true}
 
 [dev-packages]
 
