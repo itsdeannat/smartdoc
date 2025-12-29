@@ -7,7 +7,9 @@ load_dotenv(dotenv_path=".env")
 
 def analyze_spec(content: dict):
     
+    
     print("API key loaded:", bool(os.getenv("OPENAI_API_KEY")))
+    print("Checking the OAS file for issues...")
     
     client = OpenAI()
     
