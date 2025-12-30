@@ -6,7 +6,11 @@ from openai import OpenAI
 load_dotenv(dotenv_path=".env")
 
 def analyze_spec(content: dict):
-    
+    """Sends the OpenAPI Specification content to the LLM for analysis.
+
+    Args:
+        content (dict): The OpenAPI Specification content as a dictionary.
+    """
     
     print("API key loaded:", bool(os.getenv("OPENAI_API_KEY")))
     print("Checking the OAS file for issues...")
