@@ -6,6 +6,14 @@ import oas.yaml_loader as yaml_loader
 
 
 def find_file(path: str):
+    """Checks if the OAS file exists.
+
+    Args:
+        path (str): The path to the OAS YAML file.
+
+    Raises:
+        typer.Exit: If the file does not exist.
+    """
     
     if not os.path.isfile(path):
         typer.echo(f"Error: The file '{path}' does not exist.")
