@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "standard-version": "^9.5.0"
+  },
+  "scripts": {
+    "release": "standard-version"
   }
 }
