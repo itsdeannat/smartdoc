@@ -12,5 +12,4 @@ def load_file (path: str) -> dict:
     """
     with open(path) as file:
         yaml_content = yaml.safe_load(file)
-    print("OAS file loaded.")
     return yaml_content
