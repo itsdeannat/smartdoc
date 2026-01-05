@@ -21,13 +21,15 @@ def find_file(path: str):
     else:
         print(f"File '{path}' found.")
 
-def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")]):
+
+def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")], focus: Annotated[str, typer.Option(help="Specific area to focus the analysis on")] = ""):
     """
-    Analyzes an OAS file for documentation quality issues using an LLM.
-    """ 
+    Analyzes an OpenAPI Specification (OAS) file for quality and completeness using an LLM. Users can specify a focus area for the analysis, such as descriptions.
+    """
     find_file(file)
     content = yaml_loader.load_file(file)
-        
-    llm_client.analyze_spec(content)
     
-    
+    if focus == "descriptions":
+        llm_client.analyze_descriptions(content)
+    else:
+        llm_client.analyze_full_spec(content)
