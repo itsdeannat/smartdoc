@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/itsdeannat/smartdoc/compare/v0.1.0...v0.2.0) (2026-01-06)
+
+
+### Removed
+
+* removed OAS loading message, was redundant ([fe2d433](https://github.com/itsdeannat/smartdoc/commit/fe2d433c938a806ce5651071bd582f8ea82159f2))
+
+
+### Added
+
+* add focus option to check function ([570b5e5](https://github.com/itsdeannat/smartdoc/commit/570b5e5cae6f9305701873359f3a099d241318fb))
+* add function to analyze descriptions only ([73e6767](https://github.com/itsdeannat/smartdoc/commit/73e67671644d1a5a956a8fd653d95088f6dfcc7e))
+* add schemas for structured CLI output ([ca5b9a1](https://github.com/itsdeannat/smartdoc/commit/ca5b9a1d2ffe200e413109ff6622c1b51b7d826b))
+* add structured output to llm_client module ([89e416e](https://github.com/itsdeannat/smartdoc/commit/89e416edbc3b4217bca94acda19c167ac92efc80))
+
+
+### Changed
+
+* change path message ([26a1801](https://github.com/itsdeannat/smartdoc/commit/26a180154f714f8ca10ee87dd805df1a60f0c12a))
+* update check function ([172c25d](https://github.com/itsdeannat/smartdoc/commit/172c25daca6f4b28464cb2bf6e75b312c961a172))
+* update functions ([0226711](https://github.com/itsdeannat/smartdoc/commit/0226711fb5890f5e44376823c8739efeefb56a25))
+
 ## 0.1.0 (2025-12-31)
 
 
