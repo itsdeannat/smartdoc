@@ -19,7 +19,8 @@ def find_file(path: str):
         typer.echo(f"Error: The file '{path}' does not exist.")
         raise typer.Exit(code=1)
     else:
-        print(f"File '{path}' found.")
+        print("Performing OAS analysis.")
+        print(f"{path}")
 
 
 def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")], focus: Annotated[str, typer.Option(help="Specific area to focus the analysis on")] = ""):
@@ -30,6 +31,9 @@ def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specific
     content = yaml_loader.load_file(file)
     
     if focus == "descriptions":
-        llm_client.analyze_descriptions(content)
+        result = llm_client.analyze_descriptions(content)
+        llm_client.display_analysis(result, "descriptions")
+        
     else:
-        llm_client.analyze_full_spec(content)
+        result = llm_client.analyze_full_spec(content)
+        llm_client.display_analysis(result, "full")

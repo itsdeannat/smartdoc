@@ -9,6 +9,7 @@ pyyaml = "*"
 typer = "*"
 dotenv = "*"
 smartdoc = {file = ".", editable = true}
+pydantic = "*"
 
 [dev-packages]
 
