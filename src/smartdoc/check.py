@@ -31,6 +31,9 @@ def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specific
     content = yaml_loader.load_file(file)
     
     if focus == "descriptions":
-        llm_client.analyze_descriptions(content)
+        result = llm_client.analyze_descriptions(content)
+        llm_client.display_analysis(result, "descriptions")
+        
     else:
-        llm_client.analyze_full_spec(content)
+        result = llm_client.analyze_full_spec(content)
+        llm_client.display_analysis(result, "full")
