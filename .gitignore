@@ -4,4 +4,5 @@ node_modules
 /src/oas/__pycache__
 /src/smartdoc/__pycache__/
 /src/schemas/__pycache__/
+/docs/build/doctrees/
 .env
