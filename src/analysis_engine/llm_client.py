@@ -4,7 +4,7 @@ import yaml
 from openai import OpenAI
 from schemas.full_analysis_schema import FullAnalysisSchema
 
-load_dotenv(dotenv_path=".env")
+load_dotenv() 
 
 def analyze_full_spec(content: dict):
     """Sends the OpenAPI Specification content to the LLM for analysis.

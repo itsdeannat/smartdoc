@@ -10,6 +10,7 @@ typer = "*"
 dotenv = "*"
 smartdoc = {file = ".", editable = true}
 pydantic = "*"
+sphinx = "*"
 
 [dev-packages]
 
