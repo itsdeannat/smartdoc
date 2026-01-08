@@ -1,7 +1,7 @@
 [build]
   base = "docs"
-  command = "python -m sphinx -b html source build/html"
-  publish = "docs/build/html"
+  publish = "build/html"
+  command = "python -m pip install -r requirements.txt && python -m sphinx -b html source build/html"
 
 [build.environment]
   PYTHON_VERSION = "3.11"
