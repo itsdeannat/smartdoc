@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/itsdeannat/smartdoc/compare/v0.2.0...v0.2.1) (2026-01-08)
+
+
+### Documentation
+
+* add draft of installation instructions ([0e71a96](https://github.com/itsdeannat/smartdoc/commit/0e71a96ccd01bf5c9b32b696eb054f58462b6cbb))
+* add drafts of workflow and metrics topics ([a5e1a0d](https://github.com/itsdeannat/smartdoc/commit/a5e1a0dde837ea1532153aec562f573af2e19766))
+* add initial draft of homepage ([ee24b1f](https://github.com/itsdeannat/smartdoc/commit/ee24b1f14d643b9b7b9b21874683bca2b2252785))
+* add who it's for section and update TOC ([d4c2dd0](https://github.com/itsdeannat/smartdoc/commit/d4c2dd013431e34c51f0c96aa926c88f68976ae9))
+* change sidebar config ([1011330](https://github.com/itsdeannat/smartdoc/commit/101133097b29c1e61cf01940b1e82aa6a2597371))
+
+
+### Fixed
+
+* fix bug in build command ([e4ef4af](https://github.com/itsdeannat/smartdoc/commit/e4ef4af6a0ffa7e8339243da56520e8792530fa8))
+* remove hardcored env path ([ee66fa2](https://github.com/itsdeannat/smartdoc/commit/ee66fa214c81c5eba2dcac7c0b65b118e324661f))
+
+
+### Added
+
+* add config file for sphinx site ([25c8666](https://github.com/itsdeannat/smartdoc/commit/25c86663e6adaf47617b4d6898a1d0a70254988b))
+* add docs-only requirements.txt file ([2e45f87](https://github.com/itsdeannat/smartdoc/commit/2e45f8746b2a3d1a6be0f271d215e3a67d12f958))
+* add netlify.toml ([84cbad3](https://github.com/itsdeannat/smartdoc/commit/84cbad3b6e1a3c9e21ae238c170799343d25f15d))
+
 ## [0.2.0](https://github.com/itsdeannat/smartdoc/compare/v0.1.0...v0.2.0) (2026-01-06)
 
 
