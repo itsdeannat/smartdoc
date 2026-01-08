@@ -11,6 +11,13 @@ What is SmartDoc?
 
 SmartDoc is a command-line interface (CLI) tool for analyzing OpenAPI Specification (OAS) files. It surfaces missing details, structural issues, and inconsistencies that makes APIs harder to understand and use. SmartDoc helps teams catch documentation issues early in the development process, improving API quality and the developer experience.
 
+Who it's for
+************
+
+* **Developers** creating or updating OpenAPI specifications
+* **Technical writers** validating API documentation
+* **API teams** getting specs ready for release 
+
 Features
 ********
 * **Powered by OpenAI's GPT-5 model for advanced analysis**: SmartDoc leverages the capabilities of OpenAI's GPT-5 model to perform in-depth analysis of OAS files, providing insights that go beyond basic validation.
@@ -21,9 +28,10 @@ Features
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
 
    installation
+   smartdoc_workflow
+   metrics
 
 
 
