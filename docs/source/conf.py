@@ -30,6 +30,9 @@ html_theme_options = {
     'description': 'CLI tooling for Smart API Documentation',
     "fixed_sidebar": True,
 }
+html_theme_options = {
+    "globaltoc_collapse": False,
+}
 html_sidebars = {
     '**': [
         'about.html',
