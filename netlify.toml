@@ -1,6 +1,6 @@
 [build]
   base = "docs"
-  command = "sphinx-build -b html source build/html"
+  command = "python -m sphinx -b html source build/html"
   publish = "docs/build/html"
 
 [build.environment]
