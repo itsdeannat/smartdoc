@@ -1,6 +1,7 @@
 import typer
 
 from .check import check
+from .summarize import summarize
 
 
 app = typer.Typer()
@@ -11,6 +12,7 @@ def main():
     pass
 
 app.command(name="check")(check)
+app.command(name="summarize")(summarize)
 
 
 if __name__ == "__main__":
