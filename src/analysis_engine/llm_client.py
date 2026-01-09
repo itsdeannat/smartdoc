@@ -20,7 +20,7 @@ def analyze_full_spec(content: dict):
     response = client.responses.parse(
         model="gpt-5-mini",
         reasoning={"effort": "low"},
-        instructions="You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and should analyze it using the given structure. Be concise. Optimize for scanability over completeness. Use a scale of 0-100 for scores. You must report issues as concise diagnostics, not explanations. Issues should read like linter findings. Do not explain best practices or justify why the issue is important. List issues as concise, one-line diagnostics. Prefer fragments over full explanatory sentences.",
+        instructions="You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and must analyze it using the given structure. For each metric, assign a numeric score between 0 and 100, where higher scores indicate stronger documentation quality for that metric. Report 5-8 findings. Merge related problems into a single finding. Do not list multiple findings for the same issue. Each finding must be one sentence. Each finding must reference exactly one concrete OAS location (path, operation, response code, parameter name, or schema path). Do not include more than one example, schema, or path in a single finding. Do not use conjunctions to list multiple instances (avoid “and”, “or”, commas). Use fragments, not full sentences. Do not explain best practices or justify why the issue is important.",
         input=serialized_oas,
         text_format=FullAnalysisSchema
     )
