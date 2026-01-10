@@ -69,6 +69,8 @@ def display_analysis(analysis, focus=None):
         print("OAS Analysis Results (Full)")
     print("-" * 27)
     
+    print()
+    
     quality_label = get_quality_label(data.get("overall_quality", None), data)
     print(f"Overall Quality: {quality_label}")
     
@@ -85,7 +87,12 @@ def display_analysis(analysis, focus=None):
     if "recommendations" in data and data["recommendations"]:
         print()
         print("Recommendations:")
-        print(data["recommendations"])
+        recommendations = data.get("recommendations", [])
+        if not recommendations:
+            print("No recommendations available.")
+        else:
+            for recommendation in recommendations:
+                print(f"- {recommendation['summary']}")
     
     
 def get_quality_label(quality_score: int, data) -> str:
