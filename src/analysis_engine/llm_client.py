@@ -1,9 +1,7 @@
-import os
-from urllib import response
 from dotenv import load_dotenv
 import yaml
 from openai import OpenAI
-from schemas.full_analysis_schema import FullAnalysisSchema
+from schemas import FullAnalysisSchema, DescriptionAnalysisSchema, ExamplesAnalysisSchema, NamingAnalysisSchema
 
 load_dotenv() 
 
@@ -28,53 +26,90 @@ def analyze_full_spec(content: dict):
     analysis = response.output_parsed
     return analysis
 
-def analyze_descriptions(content: dict):
-    """Analyzes only the descriptions in the OpenAPI Specification content.
+def analyze_focus(content: dict, focus: str):
+    """Analyzes a specific focus area in the OpenAPI Specification content.
 
     Args:
         content (dict): The OpenAPI Specification content as a dictionary.
+        focus (str): The specific area to focus the analysis on.
     """
-    client = OpenAI()
+    focus_schemas = {
+        "descriptions": DescriptionAnalysisSchema,
+        "naming": NamingAnalysisSchema,
+        "examples": ExamplesAnalysisSchema
+    }
     
+    if focus not in focus_schemas:
+        raise ValueError(f"Unsupported focus area: {focus}")
+    
+    client = OpenAI()
     serialized_oas = yaml.dump(content, sort_keys=False)
-
-    description_response = client.responses.parse(
+    focus_response = client.responses.parse(
         model="gpt-5-mini",
         reasoning={"effort": "low"},
-        instructions="You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and should analyze it using the given structure. You must only focus on the descriptions. Be concise. Optimize for scanability over completeness. Use a scale of 0-100 for scores. You must report issues as concise diagnostics, not explanations. Issues should read like linter findings. Do not explain best practices or justify why the issue is important. List issues as concise, one-line diagnostics. Prefer fragments over full explanatory sentences.",
+        instructions=f"You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and you must analyze ONLY the following focus area: {focus_schemas[focus]}. Ignore other parts of the specification. Use a scale of 0-100 for the score. You must report issues as concise diagnostics, not explanations. Issues should read like linter findings. Do not explain best practices or justify why the issue is important. List issues as concise, one-line diagnostics. Prefer fragments over full explanatory sentences.",
         input=serialized_oas,
-        text_format=FullAnalysisSchema
+        text_format=focus_schemas[focus]
     )
-    description_response = description_response.output_parsed
-    return description_response
+    focus_response = focus_response.output_parsed
+    return focus_response
+    
 
-def display_analysis(analysis: FullAnalysisSchema, focus: str):
+def display_analysis(analysis, focus=None):
     """
     Displays the analysis results in a readable format.
     """
-    print("-"*25)
-    print("OAS Analysis Results:")
-    print("-"*25)
-    
-    if analysis.issues == []:
-        print("No issues found in the OAS file!")
-    else:
-        for issue in analysis.issues:
-            print(f"- {issue.summary}: {issue.message}")
 
-    print("-"*25)
-    print("Scores: ")           
-    print("-"*25)
-    if focus == "descriptions":
-        print(f"{'Descriptions':<20}: {analysis.description_coverage}/100")
-        print(f"{'Description Clarity':<20}: {analysis.description_clarity}/100")
-    # Eventually add other focus areas here
+    data = analysis.model_dump()
+
+    print("-" * 27)
+    if focus:
+        print(f"OAS Analysis Results ({focus.capitalize()})")
+    else: 
+        print("OAS Analysis Results (Full)")
+    print("-" * 27)
+    
+    quality_label = get_quality_label(data.get("overall_quality", None), data)
+    print(f"Overall Quality: {quality_label}")
+    
+    print()
+    
+    print("Key Findings:")
+    issues = data.get("issues", [])
+    if not issues:
+        print("No issues found in the OAS file.")
     else:
-        print(f"{'Descriptions':<20}: {analysis.description_coverage}/100")
-        print(f"{'Description Clarity':<20}: {analysis.description_clarity}/100")
-        print(f"{'Naming Consistency':<20}: {analysis.naming_consistency}/100")
-        print(f"{'Example Adequacy':<20}: {analysis.example_adequacy}/100")
-        print(f"{'Overall Score':<20}: {analysis.overall_score}/100")
+        for issue in issues:
+            print(f"- {issue['summary']}: {issue['message']}")
+            
+    if "recommendations" in data and data["recommendations"]:
+        print()
+        print("Recommendations:")
+        print(data["recommendations"])
+    
+    
+def get_quality_label(quality_score: int, data) -> str:
+    """Returns a quality label based on the overall quality score.
+
+    Args:
+        quality_score (int): The overall quality score.
+
+    Returns:
+        str: The quality label corresponding to the score.
+    """
+    
+    quality_score = data.get("overall_quality", None)
+    
+    if quality_score <= 65:
+        quality_label = "Needs Improvement"
+    elif 65 <= quality_score < 75:
+        quality_label = "Fair"
+    elif 75 <= quality_score < 90:
+        quality_label = "Good"
+    else:
+        quality_label = "Excellent"
+    return quality_label
+
 
 def summarize (content: dict):
     """Generates a summary of the API's functionality, including available endpoints and HTTP methods.
