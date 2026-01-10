@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/itsdeannat/smartdoc/compare/v0.2.1...v0.3.0) (2026-01-10)
+
+
+### Fixed
+
+* change summary label ([f3aa1b0](https://github.com/itsdeannat/smartdoc/commit/f3aa1b010e60fc934cd7bb97a88bbf8d7e86d816))
+
+
+### Added
+
+* add new summarize function ([f7bf097](https://github.com/itsdeannat/smartdoc/commit/f7bf09746d27bf7431f09ed5cc57ed9c838ae2cd))
+* add recommendations schema ([0318dfa](https://github.com/itsdeannat/smartdoc/commit/0318dfa9507a93a0eea7a9308bcf9d3a502ed3e1))
+* add schemas for focus areas ([a9e6ca8](https://github.com/itsdeannat/smartdoc/commit/a9e6ca84cba19632c6de506084924aa59d6f952f))
+* add summarize command ([c945903](https://github.com/itsdeannat/smartdoc/commit/c945903df900a8e99535442cf7f9a1ea076a9714))
+* add summarize command ([b3aa945](https://github.com/itsdeannat/smartdoc/commit/b3aa945f69bcb1c66b64c7cf4ac4e8ee1b7d5557))
+
+
+### Changed
+
+* add recommendations to schemas ([47e13c0](https://github.com/itsdeannat/smartdoc/commit/47e13c05fc5df22c03223cd04b14903d47e3763b))
+* change prompt to return digestible findings ([eeca2c5](https://github.com/itsdeannat/smartdoc/commit/eeca2c5c373bf444b4c387689cc87d4663d50d95))
+* refactor focus and display functions ([562ab8c](https://github.com/itsdeannat/smartdoc/commit/562ab8c4dcecaeb2f2299e86b5403cff83cc99cf))
+* rename full analysis schema ([275f3a4](https://github.com/itsdeannat/smartdoc/commit/275f3a4b880eddcff6279b3c43735db9aadba1f2))
+* update check functionality ([71720c4](https://github.com/itsdeannat/smartdoc/commit/71720c4196c8772dc815fbe1e15af1c586b5cd59))
+* update logic to display recommendations ([2124235](https://github.com/itsdeannat/smartdoc/commit/21242355a38ae354b77d9688f10f0c0b0cb44982))
+
 ### [0.2.1](https://github.com/itsdeannat/smartdoc/compare/v0.2.0...v0.2.1) (2026-01-08)
 
 
