@@ -1,10 +1,5 @@
 from pydantic import BaseModel
-
-class Issue(BaseModel):
-    """Schema for individual issues found in the analysis."""
-    
-    summary: str
-    message: str
+from schemas.issue_schema import Issue
 
 class FullAnalysisSchema(BaseModel):
     """Schema for full analysis response from LLM."""
@@ -14,5 +9,5 @@ class FullAnalysisSchema(BaseModel):
     description_clarity: int
     naming_consistency: int
     example_adequacy: int
-    overall_score: int
+    overall_quality: int
     recommendations: str
