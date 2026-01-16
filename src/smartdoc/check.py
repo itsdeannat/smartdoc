@@ -1,8 +1,11 @@
+import datetime
 from typing_extensions import Annotated
 import typer
 import os
 import analysis_engine.llm_client as llm_client
 import oas.yaml_loader as yaml_loader
+from schemas.metadata import MetadataSchema
+from .serialize import serialize_to_json
 
 
 def find_file(path: str):
@@ -23,7 +26,7 @@ def find_file(path: str):
         print(f"{path}")
 
 
-def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")], focus: Annotated[str, typer.Option(help="Specific area to focus the analysis on")] = ""):
+def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")], focus: Annotated[str, typer.Option(help="Specific area to focus the analysis on")] = "", output: Annotated[str, typer.Option(help="The output method")] = ""):
     """
     Analyzes an OpenAPI Specification (OAS) file for quality and completeness using an LLM. Users can specify a focus area for the analysis, such as descriptions.
     """
@@ -34,4 +37,11 @@ def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specific
         llm_client.display_analysis(analysis, focus)
     else:
         analysis = llm_client.analyze_full_spec(content)
-        llm_client.display_analysis(analysis)
+        if output == "json":
+            analysis.metadata = MetadataSchema(
+                smartdoc_version="0.3.0",
+                openai_model="gpt-5-mini",
+            )
+            serialize_to_json(analysis)
+        else:
+            llm_client.display_analysis(analysis)
