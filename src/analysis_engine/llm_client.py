@@ -54,45 +54,6 @@ def analyze_focus(content: dict, focus: str):
     focus_response = focus_response.output_parsed
     return focus_response
     
-
-def display_analysis(analysis, focus=None):
-    """
-    Displays the analysis results in a readable format.
-    """
-
-    data = analysis.model_dump()
-
-    print("-" * 27)
-    if focus:
-        print(f"OAS Analysis Results ({focus.capitalize()})")
-    else: 
-        print("OAS Analysis Results (Full)")
-    print("-" * 27)
-    
-    print()
-    
-    quality_label = get_quality_label(data.get("overall_quality", None), data)
-    print(f"Overall Quality: {quality_label}")
-    
-    print()
-    
-    print("Key Findings:")
-    issues = data.get("issues", [])
-    if not issues:
-        print("No issues found in the OAS file.")
-    else:
-        for issue in issues:
-            print(f"- {issue['summary']}: {issue['message']}")
-            
-    if "recommendations" in data and data["recommendations"]:
-        print()
-        print("Recommendations:")
-        recommendations = data.get("recommendations", [])
-        if not recommendations:
-            print("No recommendations available.")
-        else:
-            for recommendation in recommendations:
-                print(f"- {recommendation['summary']}")
     
     
 def get_quality_label(quality_score: int, data) -> str:
