@@ -5,4 +5,4 @@ class Issue(BaseModel):
     
     summary: str
     path: str
-    message: str
+    action: str
