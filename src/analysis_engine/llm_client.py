@@ -47,7 +47,7 @@ def analyze_focus(content: dict, focus: str):
     focus_response = client.responses.parse(
         model="gpt-5-mini",
         reasoning={"effort": "low"},
-        instructions=f"You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and you must analyze ONLY the following focus area: {focus_schemas[focus]}. Ignore other parts of the specification. Use a scale of 0-100 for the score. You must report issues as concise diagnostics, not explanations. Issues should read like linter findings. Do not explain best practices or justify why the issue is important. List issues as concise, one-line diagnostics. Prefer fragments over full explanatory sentences.",
+        instructions=f"You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. Analyze the given OAS file and return 5–8 findings limited strictly to the following focus area: {focus_schemas[focus]}. Ignore all other parts of the specification. Each finding should reference exactly one OAS location, translating technical paths into concise, human-readable sentences. Do not list multiple locations in a single finding. Merge closely related problems into a single finding. Use a pleasant, conversational tone and help the user quickly understand the core issue and how to fix it. Do not explain best practices or justify why the issue is important. Use numeric scores between 0 and 100 for each metric. The user’s goal is to produce an OAS file that is clear, complete, and easy to understand for both technical and non-technical stakeholders.",
         input=serialized_oas,
         text_format=focus_schemas[focus]
     )
