@@ -33,8 +33,13 @@ def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specific
     find_file(file)
     content = yaml_loader.load_file(file)
     if focus:
-        analysis = llm_client.analyze_focus(content, focus)
-        llm_client.display_analysis(analysis, focus)
+        analysis = llm_client.analyze_focus(content, focus) # If focus, analyze the specific area
+        if output == "json": # If users passes json output flag, serialize to json
+            analysis.metadata = MetadataSchema(
+                smartdoc_version="0.3.0",
+                openai_model="gpt-5-mini",
+            )
+            serialize_to_json(analysis)
     else:
         analysis = llm_client.analyze_full_spec(content)
         if output == "json":
