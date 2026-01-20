@@ -42,7 +42,7 @@ Step 4: Add your OpenAI API key
 
 SmartDoc uses OpenAI's GPT-5-mini model for analysis, so you'll need to set your OpenAI API key as an environment variable. 
 
-After you obtain your API key, add it to a ``.env`` file in the root directory of the project:
+After you obtain your API key, add it to a ``.env`` file in your project directory:
 
 .. code-block:: bash
 

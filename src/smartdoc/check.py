@@ -3,6 +3,8 @@ import typer
 import os
 import analysis_engine.llm_client as llm_client
 import oas.yaml_loader as yaml_loader
+from .serialize import serialize_to_json
+from .metadata import initialize_metadata
 
 
 def find_file(path: str):
@@ -30,8 +32,9 @@ def check(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specific
     find_file(file)
     content = yaml_loader.load_file(file)
     if focus:
-        analysis = llm_client.analyze_focus(content, focus)
-        llm_client.display_analysis(analysis, focus)
+        analysis_result = llm_client.analyze_focus(content, focus) # If focus, analyze the specific area        
     else:
-        analysis = llm_client.analyze_full_spec(content)
-        llm_client.display_analysis(analysis)
+        analysis_result = llm_client.analyze_full_spec(content) # Else analyze the full spec
+    
+    initialize_metadata(analysis_result)
+    serialize_to_json(analysis_result)

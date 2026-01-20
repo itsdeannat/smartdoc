@@ -11,6 +11,7 @@ dotenv = "*"
 smartdoc = {file = ".", editable = true}
 pydantic = "*"
 sphinx = "*"
+sphinx-autobuild = "*"
 
 [dev-packages]
 

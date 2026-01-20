@@ -4,4 +4,5 @@ class Issue(BaseModel):
     """Schema for individual issues found in the analysis."""
     
     summary: str
-    message: str
+    path: str
+    action: str

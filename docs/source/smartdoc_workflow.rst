@@ -7,7 +7,11 @@ SmartDoc analyzes OpenAPI Specification (OAS) files using OpenAI's GPT-5-mini mo
 It works in three stages:
 
 1. **Data Extraction**: Extracts paths, operations, summaries, descriptions, parameters, responses, and other relevant information from the OAS file.
-2. **Contextual Analysis**: Sends the extracted data to the GPT-5-mini model, which evaluates the content against multiple quality metrics, such as completeness, clarity, consistency, and adherence to OAS best practices.
-3. **Report Generation**: Compiles the results into a structured report, highlighting issues found.
+2. **Contextual Analysis**: Sends the extracted data to the GPT-5-mini model, which acts as an experienced OAS editor and reviews the specification as a whole or within a user-defined scope.
+3. **Report Generation**: Returns the results in JSON, highlighting issues found and providing recommendations for improvement.
 
-This approach allows SmartDoc to provide context-aware analysis that goes beyond simple schema validation, helping teams catch documentation issues early in the development process.
+This approach allows SmartDoc to provide context-aware analysis that goes beyond simple schema validation, helping to surface documentation issues earlier in the development process and improving API quality and the developer experience.
+
+.. important:: 
+    
+    LLMs are stateless, meaning that they do not retain memory of previous interactions. If you run SmartDoc multiple times on the same OAS file, you may receive different results each time. However, the core issues identified should remain consistent across runs. Saving the JSON output can help maintaing a consistent reference.

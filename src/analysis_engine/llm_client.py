@@ -19,7 +19,7 @@ def analyze_full_spec(content: dict):
     response = client.responses.parse(
         model="gpt-5-mini",
         reasoning={"effort": "low"},
-        instructions="You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and must analyze it using the given structure. For each metric, assign a numeric score between 0 and 100, where higher scores indicate stronger documentation quality for that metric. Report 5-8 findings. Merge related problems into a single finding. Do not list multiple findings for the same issue. Each finding must be one sentence. Each finding must reference exactly one concrete OAS location (path, operation, response code, parameter name, or schema path). Do not include more than one example, schema, or path in a single finding. Do not use conjunctions to list multiple instances (avoid “and”, “or”, commas). Use fragments, not full sentences. Do not explain best practices or justify why the issue is important.",
+        instructions="You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. Analyze the given OAS file and return 5-8 findings. Each finding should reference exactly one OAS location but translate technical paths into concise, human-readable sentences. Do not list multiple locations in a single finding. Each finding must include a concise, neutral summary of the issue, the exact OAS location where the issue occurs, and action describing how to fix the issue. Use a pleasant, conversational tone and help the user quickly understand the core issues and how to fix them. Use numeric scores between 0 and 100 for each metric. Merge related problems into a single finding. Do not explain best practices or justify why the issue is important. The user's goal is to produce an OAS file that is clear, complete, and easy to understand for both technical and non-technical stakeholders.",
         input=serialized_oas,
         text_format=FullAnalysisSchema
     )
@@ -47,52 +47,13 @@ def analyze_focus(content: dict, focus: str):
     focus_response = client.responses.parse(
         model="gpt-5-mini",
         reasoning={"effort": "low"},
-        instructions=f"You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. You will be given an OAS file and you must analyze ONLY the following focus area: {focus_schemas[focus]}. Ignore other parts of the specification. Use a scale of 0-100 for the score. You must report issues as concise diagnostics, not explanations. Issues should read like linter findings. Do not explain best practices or justify why the issue is important. List issues as concise, one-line diagnostics. Prefer fragments over full explanatory sentences.",
+        instructions=f"You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. Analyze the given OAS file and return 5–8 findings limited strictly to the following focus area: {focus_schemas[focus]}. Ignore all other parts of the specification. Each finding must include a concise, neutral summary of the issue, the exact OAS location where the issue occurs, and action describing how to fix the issue. Each finding should reference exactly one OAS location, translating technical paths into concise, human-readable sentences. Do not list multiple locations in a single finding. Merge closely related problems into a single finding. Use a pleasant, conversational tone and help the user quickly understand the core issue and how to fix it. Do not explain best practices or justify why the issue is important. Use numeric scores between 0 and 100 for each metric. The user’s goal is to produce an OAS file that is clear, complete, and easy to understand for both technical and non-technical stakeholders.",
         input=serialized_oas,
         text_format=focus_schemas[focus]
     )
     focus_response = focus_response.output_parsed
     return focus_response
     
-
-def display_analysis(analysis, focus=None):
-    """
-    Displays the analysis results in a readable format.
-    """
-
-    data = analysis.model_dump()
-
-    print("-" * 27)
-    if focus:
-        print(f"OAS Analysis Results ({focus.capitalize()})")
-    else: 
-        print("OAS Analysis Results (Full)")
-    print("-" * 27)
-    
-    print()
-    
-    quality_label = get_quality_label(data.get("overall_quality", None), data)
-    print(f"Overall Quality: {quality_label}")
-    
-    print()
-    
-    print("Key Findings:")
-    issues = data.get("issues", [])
-    if not issues:
-        print("No issues found in the OAS file.")
-    else:
-        for issue in issues:
-            print(f"- {issue['summary']}: {issue['message']}")
-            
-    if "recommendations" in data and data["recommendations"]:
-        print()
-        print("Recommendations:")
-        recommendations = data.get("recommendations", [])
-        if not recommendations:
-            print("No recommendations available.")
-        else:
-            for recommendation in recommendations:
-                print(f"- {recommendation['summary']}")
     
     
 def get_quality_label(quality_score: int, data) -> str:
