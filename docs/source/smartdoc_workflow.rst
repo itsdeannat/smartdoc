@@ -11,3 +11,7 @@ It works in three stages:
 3. **Report Generation**: Returns the results in JSON, highlighting issues found and providing recommendations for improvement.
 
 This approach allows SmartDoc to provide context-aware analysis that goes beyond simple schema validation, helping to surface documentation issues earlier in the development process and improving API quality and the developer experience.
+
+.. important:: 
+    
+    LLMs are stateless, meaning that they do not retain memory of previous interactions. If you run SmartDoc multiple times on the same OAS file, you may receive different results each time. However, the core issues identified should remain consistent across runs. Saving the JSON output can help maintaing a consistent reference.
