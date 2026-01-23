@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/itsdeannat/smartdoc/compare/v0.3.0...v0.4.0) (2026-01-23)
+
+
+### Added
+
+* add function to serialize basemodel object to JSON ([50ff0c8](https://github.com/itsdeannat/smartdoc/commit/50ff0c8fc33c4276f0508cedf435b0bb9a17ce80))
+* add function to set metadata for result ([dce9315](https://github.com/itsdeannat/smartdoc/commit/dce93152960574dcae8f25f3db872001065970b1))
+* add metadata model ([c6b75b6](https://github.com/itsdeannat/smartdoc/commit/c6b75b6728fcf4fdb475d820f4e91518282f8f0b))
+* add output option to check function ([034cb9b](https://github.com/itsdeannat/smartdoc/commit/034cb9b6f9ce8c980da85937748fd5d7728a376a))
+
+
+### Changed
+
+* add metadata schema ([ed2200b](https://github.com/itsdeannat/smartdoc/commit/ed2200b92f93bd622bc5d1c72c2e9bf3d3b96203))
+* add path field to issue model ([68b11eb](https://github.com/itsdeannat/smartdoc/commit/68b11ebe4d7834a4cca9556ceffc79abbd490b35))
+* add the ability for users to get focused json output ([146f9b0](https://github.com/itsdeannat/smartdoc/commit/146f9b04bf1a1a8f6ab3abb3f993eef7c9ad9550))
+* change 'message' to 'action' ([458e1c1](https://github.com/itsdeannat/smartdoc/commit/458e1c13ee6c17cb39d5f724d8da3ddcf033675f))
+* change prompt to use more conversational tone ([687100f](https://github.com/itsdeannat/smartdoc/commit/687100ff72cb4ec518018f5ee94c81c2a4c30695))
+* remove human readable output ([0e47ad8](https://github.com/itsdeannat/smartdoc/commit/0e47ad8f94f8fc2c05aa6e6af38562913c4e066f))
+* remove human readable output and refactor check function ([13b91cd](https://github.com/itsdeannat/smartdoc/commit/13b91cd82da784fa07a55802782c9b2d70a10fac))
+* update focus prompt to match full analysis prompt ([5b12e47](https://github.com/itsdeannat/smartdoc/commit/5b12e4797fb1106c4b6dcb50fa80376d4f2b22f8))
+* update prompts to improve response ([e3f5809](https://github.com/itsdeannat/smartdoc/commit/e3f5809d39a8fe31e30b3d0dc2bfc74c384c866d))
+
+
+### Documentation
+
+* add note about LLMs being stateless ([4f10499](https://github.com/itsdeannat/smartdoc/commit/4f104991c2695948a0f37ed0a54e29467748ed78))
+* remove metrics page ([f3d3de6](https://github.com/itsdeannat/smartdoc/commit/f3d3de6cf970eff9dc8c8caeb7ecd2249ef7ed25))
+* update index content and TOC ([878961d](https://github.com/itsdeannat/smartdoc/commit/878961da52f6ef31e666b2442843a68a2a698061))
+* update instructions about .env file ([1e92eba](https://github.com/itsdeannat/smartdoc/commit/1e92eba77130aea5ba6ab59b93bc9921ee7bd385))
+* update workflow page to align with new design ([dd60bb0](https://github.com/itsdeannat/smartdoc/commit/dd60bb026677a87a05b367cbc4690ebd438be839))
+
 ## [0.3.0](https://github.com/itsdeannat/smartdoc/compare/v0.2.1...v0.3.0) (2026-01-10)
 
 
