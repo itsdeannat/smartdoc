@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class Recommendation(BaseModel):
+class RecommendationSchema(BaseModel):
     """Schema for recommendations response from LLM."""
     
     summary: str
