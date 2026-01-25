@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from schemas.issue import Issue
-from schemas.recommendation import RecommendationSchema
 from schemas.metadata import MetadataSchema
 
 class OASSchema(BaseModel):
@@ -8,6 +7,7 @@ class OASSchema(BaseModel):
     metadata: MetadataSchema
     schemas_total: int
     schemas_missing_descriptions: int 
+    schemas_missing_fields: int
     issues: list[Issue]
-    recommendations: list[RecommendationSchema]
+    recommendations: str
     
