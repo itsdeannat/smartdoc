@@ -10,7 +10,4 @@ def summarize(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Spec
     """
     content = yaml_loader.load_file(file)
     summary = llm_client.summarize(content)
-    print("-"*25)
-    print("API Summary")
-    print("-"*25)
     print(summary)
