@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import yaml
 from openai import OpenAI
-from schemas import *
+from schemas import ParameterSchema, RequestSchema, ResponseSchema, OperationSchema, FullAnalysisSchema
 
 load_dotenv() 
 
