@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from schemas.issue import Issue
 from schemas.metric import Metric
-from schemas.recommendation import Recommendation
+from schemas.recommendation import RecommendationSchema
 from schemas.metadata import MetadataSchema
 
 class ResponseSchema(BaseModel):
@@ -10,4 +10,4 @@ class ResponseSchema(BaseModel):
     metadata: MetadataSchema
     metrics: list[Metric]
     issues: list[Issue]
-    recommendations: list[Recommendation]
+    recommendations: list[RecommendationSchema]
