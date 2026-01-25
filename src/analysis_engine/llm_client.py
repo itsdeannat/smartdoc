@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import yaml
 from openai import OpenAI
-from schemas import ParameterSchema, RequestSchema, ResponseSchema, OperationSchema, FullAnalysisSchema
+from schemas import ParameterSchema, RequestSchema, ResponseSchema, OperationSchema, FullAnalysisSchema, OASSchema
 
 load_dotenv() 
 
@@ -58,7 +58,8 @@ def analyze_focus(content: dict, focus: str):
         "parameters": ParameterSchema,
         "requests": RequestSchema,
         "responses": ResponseSchema,
-        "operations": OperationSchema
+        "operations": OperationSchema,
+        "schemas": OASSchema
     }
     
     if focus not in focus_schemas:
