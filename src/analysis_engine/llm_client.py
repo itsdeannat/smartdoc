@@ -69,13 +69,15 @@ def analyze_focus(content: dict, focus: str):
     focus_response = client.responses.parse(
         model="gpt-5-mini",
         reasoning={"effort": "low"},
-        instructions=f"""You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. Analyze the given OAS file and return 5–8 findings limited strictly to the following focus area: {focus_schemas[focus]}. Ignore all other parts of the specification. Each finding must include a concise, neutral summary of the issue, the exact OAS location where the issue occurs, and action describing how to fix the issue. Each finding should reference exactly one OAS location, translating technical paths into concise, human-readable sentences. Do not list multiple locations in a single finding. 
-            Rules for action:
-            - Only describe the required change in words.
-            - Do NOT provide literal examples, sample values, JSON snippets, or code. 
-            - Do NOT explain best practices or optional improvements.
-            - Keep it short, clear, and actionable.
-        Merge closely related problems into a single finding. Use a pleasant, conversational tone and help the user quickly understand the core issue and how to fix it. Do not explain best practices or justify why the issue is important. The user’s goal is to produce an OAS file that is clear, complete, and easy to understand for both technical and non-technical stakeholders.""",
+        instructions=f"""You are an OpenAPI specification (OAS) editor with deep knowledge of OpenAPI conventions and best practices. Analyze the given OAS file and return 5–8 findings limited strictly to the following focus area: {focus_schemas[focus]}. Ignore all other parts of the specification. Each finding must include:
+            1. A concise, neutral description of the issue in human-readable language.  
+            2. The path field as fully human-readable, clearly showing HTTP method, endpoint, and component (operation description, operationId, path parameter, response code, request body, or schema property). Example mappings:  
+                - 'paths./orders.post.description' becomes 'POST /orders operation description' 
+                - 'components.schemas.NewOrder.properties.items.items.properties.productId.description' becomes 'NewOrder.items[].productId description'  
+            3. Clear instructions describing **what steps to take to fix the issue, in words only**. Do not include examples, sample values, JSON snippets, or code.  
+            Each finding must reference only one path; do not merge multiple paths. Use a pleasant, concise, and conversational tone. Do not justify why the issue matters. Focus on actionable output suitable for developers or automation.  
+            In addition to findings, identify and report numeric metrics for the specification. Report counts only; do not score or evaluate quality. Metrics should reflect the focus area, not just the reported findings.
+            Goal: produce an OAS file that is complete, clear, and easy to understand, with action instructions describing only what to do in words.""",
         input=serialized_oas,
         text_format=focus_schemas[focus]
     )
