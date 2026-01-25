@@ -12,6 +12,8 @@ smartdoc = {file = ".", editable = true}
 pydantic = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
+sphinxawesome-theme = "*"
+furo = "*"
 
 [dev-packages]
 
