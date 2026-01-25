@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import yaml
 from openai import OpenAI
-from schemas import FullAnalysisSchema, DescriptionAnalysisSchema, ExamplesAnalysisSchema, NamingAnalysisSchema
+from schemas import *
 
 load_dotenv() 
 
@@ -55,9 +55,10 @@ def analyze_focus(content: dict, focus: str):
         focus (str): The specific area to focus the analysis on.
     """
     focus_schemas = {
-        "descriptions": DescriptionAnalysisSchema,
-        "naming": NamingAnalysisSchema,
-        "examples": ExamplesAnalysisSchema
+        "parameters": ParameterSchema,
+        "requests": RequestSchema,
+        "responses": ResponseSchema,
+        "operations": OperationSchema
     }
     
     if focus not in focus_schemas:
