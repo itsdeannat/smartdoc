@@ -27,6 +27,19 @@ def analyze_full_spec(content: dict):
                 - 'components.schemas.NewOrder.properties.items.items.properties.productId.description' becomes 'NewOrder.items[].productId description'  
             3. Clear instructions describing **what steps to take to fix the issue, in words only**. Do not include examples, sample values, JSON snippets, or code.  
             Each finding must reference only one path; do not merge multiple paths. Use a pleasant, concise, and conversational tone. Do not justify why the issue matters. Focus on actionable output suitable for developers or automation.  
+            In addition to findings, identify and report numeric metrics for the specification. Report counts only; do not score or evaluate quality. The metrics to report are:
+
+                - operations_total
+                - operations_missing_descriptions
+                - parameters_total
+                - parameters_missing_descriptions
+                - responses_total
+                - responses_missing_descriptions
+                - schemas_total
+                - schemas_missing_descriptions
+                - request_bodies_total
+                - request_bodies_missing_descriptions
+            Metrics should reflect the full specification, not just the reported findings.
             Goal: produce an OAS file that is complete, clear, and easy to understand, with action instructions describing only what to do in words.""",
         input=serialized_oas,
         text_format=FullAnalysisSchema
