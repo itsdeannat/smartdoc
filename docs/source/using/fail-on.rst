@@ -33,3 +33,38 @@ If the value in the condition is greater than the value in the results, the fail
     :class: note
 
     Once I actually get this working in a pipeline, I can show an example.
+
+Example usage in a CI process (GitHub Actions)
+----------------------------------------------
+
+Here's a basic GitHub Actions workflow that runs SmartDoc on YAML files when a pull request is opened.
+
+.. code-block:: yaml
+    :class: wrap-code
+
+        name: SmartDoc
+        run-name: OAS review
+
+        on:
+        pull_request:
+            paths:
+            - "**/*.yaml"
+            - "**/*.yml"
+
+        jobs:
+        smartdoc:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: actions/checkout@v4
+              - uses: actions/setup-python@v5
+                with:
+                  python-version: "3.11"
+
+              - name: Install SmartDoc
+                run: pip install git+https://github.com/itsdeannat/smartdoc.git@release/0.5.0
+
+              - name: Analyze OpenAPI spec
+                run: smartdoc analyze schema.yml --fail-on responses.missing_descriptions=2
+
+
+    
