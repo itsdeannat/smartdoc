@@ -34,3 +34,6 @@ html_theme_options = {
 html_css_files = [
     "custom.css",
 ]
+extensions = [
+    'sphinx_copybutton'
+]
