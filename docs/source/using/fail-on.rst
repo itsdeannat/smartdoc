@@ -29,10 +29,6 @@ If the value in the condition is greater than the value in the results, the fail
     Evaluating fail-on: schemas.missing_descriptions=2
     Fail-on triggered, exiting 1
 
-.. admonition:: TODO
-    :class: note
-
-    Once I actually get this working in a pipeline, I can show an example.
 
 Example usage in a CI process (GitHub Actions)
 ----------------------------------------------
