@@ -1,4 +1,5 @@
 import yaml
+import json
 
 # Load and parse a sample OpenAPI Specification (OAS) YAML file
 def load_file (path: str) -> dict:
@@ -11,5 +12,9 @@ def load_file (path: str) -> dict:
         dict: The parsed OAS content as a dictionary.
     """
     with open(path) as file:
-        yaml_content = yaml.safe_load(file)
-    return yaml_content
+        try:
+            content = json.load(file)
+        except ImportError:
+            content = yaml.safe_load(file)
+            
+    return content
