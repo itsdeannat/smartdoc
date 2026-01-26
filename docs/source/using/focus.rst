@@ -25,18 +25,20 @@ If you run ``smartdoc analyze sample_oas.json --focus requests``, SmartDoc retur
 .. code-block:: bash
     :class: wrap-code
 
-    "request_bodies_total": 1,
-    "request_bodies_missing_descriptions": 1,
-    "requests_missing_fields": 2,
+    "operations": {
+        "total": 11,
+        "missing_descriptions": 11,
+        "missing_fields": 1
+    },
     "issues": [
         {
         "path": "POST /orders operation description",
-        "issue": "The operation description is empty.",
-        "action": "Provide a concise, non-empty description for the POST /orders operation that explains what the endpoint does, expected inputs, and any notable behavior."
+        "issue": "Operation has an empty description.",
+        "action": "Add a clear, concise description explaining what creating an order does, its important side effects, and any preconditions or expectations for the request body."
         },
         {
-        "path": "POST /orders requestBody",
-        "issue": "The requestBody object has no description.",
-        "action": "Add a descriptive requestBody.description that summarizes the structure and purpose of the request payload for this endpoint."
+        "path": "GET /orders/{orderId} 200 response description",
+        "issue": "Successful response (200) has an empty description.",
+        "action": "Provide a brief description of the 200 response clarifying what the returned payload represents and any important conditions under which it is returned."
         },
     ]
