@@ -20,7 +20,7 @@ The categories for analysis are:
 Example usage
 -------------
 
-If you run ``smartdoc check sample_oas.json --focus requests``, SmartDoc returns a focused list of metrics and issues.
+If you run ``smartdoc analyze sample_oas.json --focus requests``, SmartDoc returns a focused list of metrics and issues.
 
 .. code-block:: bash
     :class: wrap-code

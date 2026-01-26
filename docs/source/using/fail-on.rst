@@ -13,7 +13,7 @@ When using the ``--fail-on`` flag, you must pass the condition you want SmartDoc
 
 .. code-block:: bash
 
-    smartdoc check sample_oas.json --fail-on schemas.missing_descriptions=2
+    smartdoc analyze sample_oas.json --fail-on schemas.missing_descriptions=2
 
 If the value in the condition is greater than the value in the results, the fail-on is triggered and the CLI exits with a code 1. 
 

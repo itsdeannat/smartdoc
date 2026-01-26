@@ -15,7 +15,7 @@ Commands
   * - Command syntax
     - Usage
 
-  * - ``check [file]``
+  * - ``analyze [file]``
     - Analyze an OpenAPI Specification (OAS) file for quality and completeness. 
 
   * - ``summarize [file]``
@@ -24,7 +24,7 @@ Commands
 Options
 -------
 
-The following options apply to the ``check`` command only.
+The following options apply to the ``analyze`` command only.
 
 .. list-table::
   :widths: 20 50 
@@ -38,5 +38,5 @@ The following options apply to the ``check`` command only.
     - Restricts the analysis to a specific metric.
 
   * - ``--fail-on CATEGORY.METRIC=THRESHOLD``
-    - Causes the command to exit with a non-zero status code when the specified condition is met.
+    - Causes the command to exit with a non-zero status code when the specified condition is met. **Only used with a full analysis**.
 

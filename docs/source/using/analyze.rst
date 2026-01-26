@@ -1,12 +1,12 @@
 ====================
-Checking an OAS file
+Analyzing an OAS file
 ====================
 
-The ``check`` command allows you to analyze an OpenAPI Specification (OAS) file for quality and completeness. It has one required argument, ``[file]``:
+The ``analyze`` command allows you to analyze an OpenAPI Specification (OAS) file for quality and completeness. It has one required argument, ``[file]``:
 
 .. code-block:: bash
 
-    smartdoc check sample_oas.json
+    smartdoc analyze sample_oas.json
 
 The CLI outputs a message once it starts the analysis. Depending on the size of the OAS file, the analysis may take 10-15 seconds.
 

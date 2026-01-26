@@ -38,7 +38,7 @@ Features
    :hidden:
    :caption: Using SmartDoc
 
-   using/check
+   using/analyze
    using/focus
    using/categories_and_metrics
    using/fail-on
