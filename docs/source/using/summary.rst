@@ -11,7 +11,7 @@ Example usage
 
     smartdoc summarize sample_oas.json
 
-.. code-block:: bash
+.. code-block:: text
     :class: wrap-code
 
     Brew Ha Ha API — quick summary
