@@ -32,9 +32,8 @@ def evaluate_fail_on_condition(analysis_result, fail_on: list[str]):
         if metric_value is None:
             print(f"Metric '{key}' not found in analysis result")
             sys.exit(1)
-        elif metric_value <= threshold:
-            continue
-        elif metric_value > threshold:
+            
+        if metric_value > threshold:
             failed_conditions.append(
                 {
                     "condition": key,
