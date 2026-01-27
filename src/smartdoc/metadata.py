@@ -10,7 +10,7 @@ def initialize_metadata(analysis):
     """
 
     analysis.metadata = MetadataSchema(
-        smartdoc_version="0.3.0",
+        smartdoc_version="0.5.0",
         openai_model="gpt-5-mini",
     )
     
