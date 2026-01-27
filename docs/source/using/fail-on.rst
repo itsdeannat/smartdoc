@@ -9,7 +9,7 @@ If you plan to use SmartDoc with Continuous Integration (CI) pipelines, you can 
 
     You can only use ``--fail-on`` if you run a full analysis of an OAS file. If you try to pass ``--fail-on`` with the ``--focus`` option, the CLI will report an error. You will still see the JSON output.
 
-When using the ``--fail-on`` flag, you must pass the condition you want SmartDoc to evaluate using a ``CATEGORY.METRIC=THRESHOLD`` format:
+When using the ``--fail-on`` flag, you must pass the condition(s) you want SmartDoc to evaluate using a ``CATEGORY.METRIC=THRESHOLD`` format:
 
 .. code-block:: bash
 
@@ -29,9 +29,18 @@ Example output
         "missing_fields": 0
     }
 
-    Evaluating schemas.missing_descriptions=2...
-    Threshold exceeded: value=4, threshold=2.
-    Exiting 1.
+    Evaluating fail-on conditions...
+
+    ✗ schemas.missing_descriptions
+    value: 4
+    threshold: 2
+
+    ✗ operations.missing_descriptions
+    value: 2
+    threshold: 1
+
+    ❌ 2 fail-on condition(s) exceeded.
+    Failing check.
 
 Example usage in a CI process (GitHub Actions)
 ----------------------------------------------
@@ -47,8 +56,9 @@ Here's a basic GitHub Actions workflow that runs SmartDoc on YAML files when a p
         on:
         pull_request:
             paths:
-            - "**/*.yaml"
-            - "**/*.yml"
+            - "**.yaml"
+            - "**.yml"
+            - "**.json"
 
         jobs:
         smartdoc:
