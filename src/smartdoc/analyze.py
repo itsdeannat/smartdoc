@@ -2,7 +2,7 @@ import os
 from typing_extensions import Annotated
 import typer
 import analysis_engine.llm_client as llm_client
-import oas.yaml_loader as yaml_loader
+import oas.oas_loader as oas_loader
 from .serialize import serialize_to_json
 from .metadata import initialize_metadata
 from .fail_on import evaluate_fail_on_condition
@@ -32,7 +32,7 @@ def analyze(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specif
     Analyzes an OpenAPI Specification (OAS) file for quality and completeness using an LLM. Users can specify a focus area for the analysis, such as descriptions.
     """
     find_file(file)
-    content = yaml_loader.load_file(file)
+    content = oas_loader.load_file(file)
     if focus:
         analysis_result = llm_client.analyze_focus(content, focus) # If focus, analyze the specific area        
     else:
