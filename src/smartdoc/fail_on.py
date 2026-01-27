@@ -11,6 +11,8 @@ def evaluate_fail_on_condition(analysis_result, fail_on: list[str]):
             
     for condition in fail_on:
         
+        results = []
+        
         print(f"Evaluating {condition}...")
         key, threshold_str = condition.split("=")
         try:
@@ -31,9 +33,17 @@ def evaluate_fail_on_condition(analysis_result, fail_on: list[str]):
             print(f"Metric '{key}' not found in analysis result")
             sys.exit(1)
         elif metric_value <= threshold:
+            result.append(True)
             print("Threshold not met.")
             continue
         elif metric_value > threshold:
+            results.append(False)
             print(f"Threshold exceeded: value={metric_value}, threshold={threshold}.")
-            print("Exiting 1.")
-            sys.exit(1)
+            continue
+            
+        for result in results:
+            if result is False:
+                raise typer.Exit(code=1)
+            
+            
+        
