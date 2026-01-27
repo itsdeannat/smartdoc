@@ -9,7 +9,7 @@
 project = 'SmartDoc'
 copyright = '2026, Deanna Thompson'
 author = 'Deanna Thompson'
-release = '0.4.0'
+release = '0.5.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
