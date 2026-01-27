@@ -8,12 +8,12 @@ def evaluate_fail_on_condition(analysis_result, fail_on: list[str]):
     - analysis_result: FullAnalysisSchema object
     - fail_on: string in the form CATEGORY.METRIC=THRESHOLD
     # """
+    
+    failed_conditions = []
+    print("Evaluating fail-on conditions...")
             
     for condition in fail_on:
         
-        results = []
-        
-        print(f"Evaluating {condition}...")
         key, threshold_str = condition.split("=")
         try:
             threshold = int(threshold_str)
@@ -33,17 +33,28 @@ def evaluate_fail_on_condition(analysis_result, fail_on: list[str]):
             print(f"Metric '{key}' not found in analysis result")
             sys.exit(1)
         elif metric_value <= threshold:
-            result.append(True)
-            print("Threshold not met.")
             continue
         elif metric_value > threshold:
-            results.append(False)
-            print(f"Threshold exceeded: value={metric_value}, threshold={threshold}.")
+            failed_conditions.append(
+                {
+                    "condition": key,
+                    "value": metric_value,
+                    "threshold": threshold
+                }
+            )
             continue
-            
-        for result in results:
-            if result is False:
-                raise typer.Exit(code=1)
+        
+    if failed_conditions:
+        for failure in failed_conditions:
+            print()
+            print(f"✗ {failure['condition']}")
+            print(f"value: {failure['value']}")
+            print(f"threshold: {failure['threshold']}")
+            print()
+        
+    print(f"❌ {len(failed_conditions)} fail-on condition(s) exceeded.")
+    print("Failing check.")
+    raise typer.Exit(code=1)
             
             
         
