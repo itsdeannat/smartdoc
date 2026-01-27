@@ -1,13 +1,12 @@
 from pydantic import BaseModel
 from schemas.issue import Issue
-from schemas.recommendation import RecommendationSchema
 from schemas.metadata import MetadataSchema
+from schemas.metrics import Metrics
 
 class ResponseSchema(BaseModel):
     """Schema for response analysis from LLM."""
     
     metadata: MetadataSchema
-    responses_total: int
-    responses_missing_descriptions: int 
+    responses: Metrics
     issues: list[Issue]
-    recommendations: list[RecommendationSchema]
+    recommendations: str

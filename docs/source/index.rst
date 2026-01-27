@@ -28,9 +28,27 @@ Features
 
 .. toctree::
    :hidden:
+   :caption: Getting Started
 
    installation
    smartdoc_workflow
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Using SmartDoc
+
+   using/analyze
+   using/focus
+   using/categories_and_metrics
+   using/fail-on
+   using/summary
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Reference
+
+   cli-reference
 
 

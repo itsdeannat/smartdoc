@@ -1,13 +1,12 @@
 from pydantic import BaseModel
 from schemas.issue import Issue
-from schemas.recommendation import RecommendationSchema
 from schemas.metadata import MetadataSchema
+from schemas.metrics import Metrics
 
 class OperationSchema(BaseModel):
     """Schema for schema analysis from LLM."""
     
     metadata: MetadataSchema
-    operations_total: int
-    operations_missing_descriptions: int 
+    operations: Metrics
     issues: list[Issue]
-    recommendations: list[RecommendationSchema]
+    recommendations: str

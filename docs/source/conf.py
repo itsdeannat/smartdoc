@@ -9,7 +9,7 @@
 project = 'SmartDoc'
 copyright = '2026, Deanna Thompson'
 author = 'Deanna Thompson'
-release = '0.2.0'
+release = '0.4.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -24,19 +24,16 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'furo'
 html_static_path = ['_static']
 html_theme_options = {
-    'description': 'CLI tooling for Smart API Documentation',
-    "fixed_sidebar": True,
+    "source_repository": "https://github.com/itsdeannat/smartdoc",
+    "source_branch": "main",
+    "source_directory": "docs/source/",
 }
-html_theme_options = {
-    "globaltoc_collapse": False,
-}
-html_sidebars = {
-    '**': [
-        'about.html',
-        'searchfield.html',
-        'navigation.html',
-    ]
-}
+html_css_files = [
+    "custom.css",
+]
+extensions = [
+    'sphinx_copybutton'
+]

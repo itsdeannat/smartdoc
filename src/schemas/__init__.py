@@ -5,5 +5,4 @@ from .parameters import ParameterSchema
 from .requests import RequestSchema
 from .responses import ResponseSchema
 from .oas_schema import OASSchema
-from .recommendation import RecommendationSchema
 from .metadata import MetadataSchema

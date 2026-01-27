@@ -23,7 +23,7 @@ Step 1: Clone the source repository
    cd smartdoc
 
 Step 2: Create and activate a virtual environment (optional)
-----------------------------------------------------------------------------
+-------------------------------------------------------------
 
 .. code-block:: bash
 

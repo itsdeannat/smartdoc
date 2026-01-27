@@ -31,14 +31,20 @@ def analyze_full_spec(content: dict):
 
                 - operations_total
                 - operations_missing_descriptions
+                - operations_missing_fields
                 - parameters_total
                 - parameters_missing_descriptions
+                - parameters_missing_fields
                 - responses_total
                 - responses_missing_descriptions
+                - responses_missing_fields
                 - schemas_total
                 - schemas_missing_descriptions
+                - schemas_missing_fields
                 - request_bodies_total
                 - request_bodies_missing_descriptions
+                - request_bodies_missing_fields
+            4. Return 1-2 high-level recommendations for improvement. The recommendations *must* be short, concise sentences.
             Metrics should reflect the full specification, not just the reported findings.
             Goal: produce an OAS file that is complete, clear, and easy to understand, with action instructions describing only what to do in words.""",
         input=serialized_oas,

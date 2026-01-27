@@ -1,7 +1,17 @@
 [project]
 name = "smartdoc"
-version = "0.1.0"
+version = "0.4.0"
 description = "A quality scorer for OAS files"
+
+dependencies = [
+  "typer>=0.9",
+  "rich",
+  "pyyaml",
+  "openai",
+  "python-dotenv",
+  "httpx",
+  "pydantic",
+]
 
 [build-system]
 requires = ["setuptools >= 77.0.3"]

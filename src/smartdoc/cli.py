@@ -1,6 +1,6 @@
 import typer
 
-from .check import check
+from .analyze import analyze
 from .summarize import summarize
 
 
@@ -11,7 +11,7 @@ app = typer.Typer()
 def main():
     pass
 
-app.command(name="check")(check)
+app.command(name="analyze")(analyze)
 app.command(name="summarize")(summarize)
 
 
