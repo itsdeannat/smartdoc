@@ -2,6 +2,78 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/itsdeannat/smartdoc/compare/v0.4.0...v0.5.0) (2026-01-27)
+
+
+### Added
+
+* add fail_on helper ([fe0500b](https://github.com/itsdeannat/smartdoc/commit/fe0500bf6a366dc8f6d930f419d3dd3888ced301))
+* add fail-on option ([a20a146](https://github.com/itsdeannat/smartdoc/commit/a20a146849844e892efd1c94db5445fd4afbf506))
+* add metric schema ([5b9ea33](https://github.com/itsdeannat/smartdoc/commit/5b9ea3354e04b959e92a033698553290d858b1a0))
+* add metrics report to prompt ([0cc63b7](https://github.com/itsdeannat/smartdoc/commit/0cc63b7e82d7a16067ec8105c92e9fbd3a11d61f))
+* add metrics schema ([4dda5fe](https://github.com/itsdeannat/smartdoc/commit/4dda5fe4b02b6559b02f8aae4864c1deecd51ef8))
+* add oas schema ([8d729b9](https://github.com/itsdeannat/smartdoc/commit/8d729b92e4de3a20115a0f6d280543e17ba3db3b))
+* add request schema ([a363b95](https://github.com/itsdeannat/smartdoc/commit/a363b95a31d6dee49681970068f280376a4611cd))
+* add response schema ([b91fbb2](https://github.com/itsdeannat/smartdoc/commit/b91fbb250807ec3735d3700d8142746151307c06))
+
+
+### Changed
+
+* add metrics to category schemas ([6aba1b7](https://github.com/itsdeannat/smartdoc/commit/6aba1b7ed92252562d1b4a14693f17778053bf2e))
+* add new focus areas ([b8ef71f](https://github.com/itsdeannat/smartdoc/commit/b8ef71ff1f683b13ea039cebafebe28736a90e4a))
+* change check to analyze ([c45db06](https://github.com/itsdeannat/smartdoc/commit/c45db06f286ac4c917746b0b0709e616d70f9f4b))
+* change check to analyze in codebase ([cde11ac](https://github.com/itsdeannat/smartdoc/commit/cde11ac07c89685b32be22bc0d450bd1014ae5ee))
+* change focus prompt ([a3e1f81](https://github.com/itsdeannat/smartdoc/commit/a3e1f81a5caca807acd17ea59f6a9a88da32f68a))
+* change loader function to accept json and yaml ([5671766](https://github.com/itsdeannat/smartdoc/commit/56717665d2cc9737fdbaaafa230a54c5168ce4e8))
+* delete recommendation schema ([5f8bc80](https://github.com/itsdeannat/smartdoc/commit/5f8bc80f820b6612a1654c6fa38f43d35ba2eb61))
+* fix issue with LLM providing examples ([24eface](https://github.com/itsdeannat/smartdoc/commit/24efaceddf79032b7c4d3b5c7e9850b97a5cf70d))
+* modify yaml loader function to accept json ([9a24692](https://github.com/itsdeannat/smartdoc/commit/9a24692d9bfa8f01ed535ac8cc04cebb0bc47af2))
+* remove header for summarize function ([5d8bd61](https://github.com/itsdeannat/smartdoc/commit/5d8bd618828ba3529db003f46e5290f659d6f191))
+* remove metric schema ([49eee68](https://github.com/itsdeannat/smartdoc/commit/49eee68cf89617bb436cfac8bd7e7f53ea4d9aef))
+* remove metric schema and add focus specific metrics ([c329977](https://github.com/itsdeannat/smartdoc/commit/c3299771ea5c4bfa2753c206002727f4cb328481))
+* remove old metrics ([2537fd4](https://github.com/itsdeannat/smartdoc/commit/2537fd4ceabef7f3be2c6a0181c7b3878a369f33))
+* remove recomendation schema in favor of a string ([cad9de4](https://github.com/itsdeannat/smartdoc/commit/cad9de4bdc45ba14f1b5712ce77f9eb88e9a43d5))
+* rename focus schemas ([6c0a1e6](https://github.com/itsdeannat/smartdoc/commit/6c0a1e63e9a128858e8d754fdf124cc6886a0be3))
+* rename oas schema file ([1df3214](https://github.com/itsdeannat/smartdoc/commit/1df32147697479d691105a42cf73cf2c2230c4a7))
+* reorder issue schema ([604fafe](https://github.com/itsdeannat/smartdoc/commit/604fafefd0ea2aceee09d6e2ca804ed9798da436))
+* simplify schemas ([3eda0b9](https://github.com/itsdeannat/smartdoc/commit/3eda0b9f5e0a5ee89bbbcaab4e65ffa2fa76a0b0))
+* update analyze function to accept multiple fail-on conditions ([0f4f7e2](https://github.com/itsdeannat/smartdoc/commit/0f4f7e216e3aba44ea7d058d3a7d9d48dcd879e3))
+* update check function in cli.py ([75a0792](https://github.com/itsdeannat/smartdoc/commit/75a0792d780ac1a938138bc6009badcc936baff4))
+* update fail_on function to support multiple conditions ([bf6d52a](https://github.com/itsdeannat/smartdoc/commit/bf6d52a1bf74faa3b572bc15f04806f38486ba47))
+* update prompt to return human readable paths ([0c170ad](https://github.com/itsdeannat/smartdoc/commit/0c170ad227cd67581ba6f3e39f116e30b7c6d6ae))
+
+
+### Fixed
+
+* added new metrics to prompt ([d17fa95](https://github.com/itsdeannat/smartdoc/commit/d17fa95cdac9908bcbb0fe7a2abea8763d0541c0))
+* change lexer for summary example ([468d2d6](https://github.com/itsdeannat/smartdoc/commit/468d2d638ceeaeb8d66db5c4a9fbe8d7749d2201))
+* fix fail-on output ([21a7415](https://github.com/itsdeannat/smartdoc/commit/21a741514c2b44379a5e582a9d50d43a8c13116b))
+* fix imports ([9778b9c](https://github.com/itsdeannat/smartdoc/commit/9778b9cbba80495c67fcdb1129b554edc4b2f6d7))
+* fix issue with other conditions not being evaluated ([b1ebdde](https://github.com/itsdeannat/smartdoc/commit/b1ebdde59552e2f6929f0985160d6250a550e5d8))
+* fix OAS schema import ([abefad8](https://github.com/itsdeannat/smartdoc/commit/abefad8a337527294e3583a9d65875c18cd1b3d5))
+* remove unneeded if statement ([37b544e](https://github.com/itsdeannat/smartdoc/commit/37b544e0375820f7eb66fbb19fbabdbdcf1eb348))
+* remove wildcard import ([2571963](https://github.com/itsdeannat/smartdoc/commit/2571963cb76aabff13c11c16de76b7110637686a))
+
+
+### Documentation
+
+* add categories and metrics page ([b61e39f](https://github.com/itsdeannat/smartdoc/commit/b61e39fd8c586ba632915ac36ee6047c7eda6e02))
+* add check page ([0d2b5c8](https://github.com/itsdeannat/smartdoc/commit/0d2b5c8c70d1638dc50537e6133cc08869aa7c32))
+* add cli reference page ([35d12b7](https://github.com/itsdeannat/smartdoc/commit/35d12b7f5d4b8aca252ad24d70a5ae1410e89ab3))
+* add CSS for wrapping code blocks ([e1903a5](https://github.com/itsdeannat/smartdoc/commit/e1903a5d1cd43973355c36c3fce7a51ca4001d8c))
+* add example github workflow file ([0b7bf98](https://github.com/itsdeannat/smartdoc/commit/0b7bf98b17d5ea7c819591d887d341d66540ce1c))
+* add fail-on page ([9e67461](https://github.com/itsdeannat/smartdoc/commit/9e6746157303ecc76a9f0a952563ebb05fd372dc))
+* add focus topic ([f962d6c](https://github.com/itsdeannat/smartdoc/commit/f962d6cb4bd9f2ad841e630bcb2e7acb15327175))
+* add sphinx-copybutton to requirements.txt ([d8a8997](https://github.com/itsdeannat/smartdoc/commit/d8a89977109d6afc5bdd3b3d83154e1e8bbfa902))
+* add summary topic ([0f47ed0](https://github.com/itsdeannat/smartdoc/commit/0f47ed069a70f40c56a33aab48132d96bc0bcba1))
+* remove information about focused analysis ([fcfa8db](https://github.com/itsdeannat/smartdoc/commit/fcfa8db97d77dbe647a2436e494de1d4b5cd8dfb))
+* update conf.py ([6fc7c2b](https://github.com/itsdeannat/smartdoc/commit/6fc7c2b49fbab7fc585d8373af1be7f48ceefd9e))
+* update docs to support multiple fail-on conditions ([868486e](https://github.com/itsdeannat/smartdoc/commit/868486e23022c7b4fd28b31c5190394c326ba3da))
+* update fail-on topic ([cb5deb9](https://github.com/itsdeannat/smartdoc/commit/cb5deb9bb30e9cadd730c70afa5b0f65944b3d0b))
+* update focus example ([4c90e12](https://github.com/itsdeannat/smartdoc/commit/4c90e12ccaab4cb3aeba1d96837fb9657a428722))
+* update TOC ([f66afa3](https://github.com/itsdeannat/smartdoc/commit/f66afa3e9738ef71270c9accdad381b72a4e23b0))
+* update workflows page ([b968ca3](https://github.com/itsdeannat/smartdoc/commit/b968ca31371cbc5c86a3a4c6e7e83497d15ca0f8))
+
 ## [0.4.0](https://github.com/itsdeannat/smartdoc/compare/v0.3.0...v0.4.0) (2026-01-23)
 
 
