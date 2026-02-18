@@ -1,0 +1,10 @@
+extends: existence
+message: "Avoid vague directional instructions like '%s'. Be specific about the element or section name."
+level: warning
+ignorecase: true
+tokens:
+  - click here
+  - see below
+  - see above
+  - this link
+  - here

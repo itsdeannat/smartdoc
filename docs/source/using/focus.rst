@@ -15,7 +15,7 @@ The categories for analysis are:
 .. admonition:: Why these categories?
     :class: note
 
-    These are the fundamental building blocks of an API. If these elements are not documented, or are documented incorrectly, developers won't know how to use your API effectively, which can lead to confusion, errors, and wasted time and money. By focusing on these building blocks, SmartDoc ensures the API is usable, predictable, and easy to integrate.
+    These are the fundamental building blocks of an API. If these elements are not documented, or are documented incorrectly, developers won't know how to use your API effectively, which can lead to confusion, errors, and wasted time and money. By focusing on these building blocks, SmartDoc ensures the API is usable and predictable.
 
 Example usage
 -------------

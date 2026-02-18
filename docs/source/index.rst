@@ -23,7 +23,7 @@ Features
 * **Powered by OpenAI's GPT-5 model for advanced analysis**: SmartDoc leverages the capabilities of OpenAI's GPT-5-mini model to perform an in-depth analysis of OAS files, providing insights that go beyond basic validation.
 * **OpenAPI-Native (YAML and JSON)**: SmartDoc supports both YAML and JSON formats for OpenAPI Specification files, making it versatile for different development environments.
 * **Automation-Friendly**: Designed to be integrated into CI/CD pipelines, SmartDoc can automatically analyze OAS files during the development process, ensuring continuous quality checks.
-* **Context-Aware Analysis**: SmartDoc evaluates the context of the API definitions, helping to identify issues that may not be apparent through simple schema validation.
+* **Context-Aware Analysis**: SmartDoc evaluates the context of the API definitions, helping to identify issues that may not be apparent through schema validation.
 
 
 .. toctree::
