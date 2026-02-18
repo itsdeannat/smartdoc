@@ -53,7 +53,7 @@ Replace ``your_api_key_here`` with your actual OpenAI API key.
 Step 5: Verify the installation
 -------------------------------
 
-To verify that SmartDoc is installed correctly, run the following command:
+To verify that SmartDoc is installed correctly, simply run the following command:
 
 .. code-block:: bash
 
