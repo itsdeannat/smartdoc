@@ -37,3 +37,6 @@ html_css_files = [
 extensions = [
     'sphinx_copybutton'
 ]
+linkcheck_ignore = [
+    r"^https://openai\.com/api/?$",
+]
