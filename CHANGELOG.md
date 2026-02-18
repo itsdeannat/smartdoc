@@ -18,6 +18,22 @@ All notable changes to this project will be documented in this file. See [standa
 * move vale rules to base dir ([6e9a323](https://github.com/itsdeannat/smartdoc/commit/6e9a323e58fe4d828b222e8706be8ce69daf39b5))
 * silence warnings on openapi url ([80e815c](https://github.com/itsdeannat/smartdoc/commit/80e815cc0571130b446d618a15a880b66702cf19))
 
+### [0.5.1](https://github.com/itsdeannat/smartdoc/compare/v0.5.0...v0.5.1) (2026-02-18)
+
+
+### Fixed
+
+* address pipeline failures ([06dc5f1](https://github.com/itsdeannat/smartdoc/commit/06dc5f1e986d43bcc3752612ba92f707c3d5066f))
+
+
+### Documentation
+
+* add .vale.ini file ([48986a2](https://github.com/itsdeannat/smartdoc/commit/48986a209dfadf931b9116550efbc0d81f04c883))
+* add docs ci file ([9e5f84c](https://github.com/itsdeannat/smartdoc/commit/9e5f84c39c37947571c7b48d3549f0fbcfd0c552))
+* add vale styles ([ebc302c](https://github.com/itsdeannat/smartdoc/commit/ebc302c8fc14ef4f4c8a89626308efda8dfdf4cb))
+* move vale rules to base dir ([6e9a323](https://github.com/itsdeannat/smartdoc/commit/6e9a323e58fe4d828b222e8706be8ce69daf39b5))
+* silence warnings on openapi url ([80e815c](https://github.com/itsdeannat/smartdoc/commit/80e815cc0571130b446d618a15a880b66702cf19))
+
 ## [0.5.0](https://github.com/itsdeannat/smartdoc/compare/v0.4.0...v0.5.0) (2026-01-27)
 
 
