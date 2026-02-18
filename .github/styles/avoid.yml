@@ -1,0 +1,14 @@
+extends: existence 
+message: "Don't use '%s'."
+ignorecase: true
+level: error
+tokens:
+    - simple
+    - easy
+    - just
+    - simply
+    - obviously
+    - basically
+    - please 
+    - in order to
+    - pretty 
