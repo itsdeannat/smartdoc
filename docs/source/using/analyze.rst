@@ -1,6 +1,6 @@
-====================
+=====================
 Analyzing an OAS file
-====================
+=====================
 
 The ``analyze`` command allows you to analyze an OpenAPI Specification (OAS) file for quality and completeness. It has one required argument, ``[file]``:
 

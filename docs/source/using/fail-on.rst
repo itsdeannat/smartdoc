@@ -45,7 +45,7 @@ Example output
 Example usage in a CI process (GitHub Actions)
 ----------------------------------------------
 
-Here's a basic GitHub Actions workflow that runs SmartDoc on YAML files when a pull request is opened.
+The following code block a basic GitHub Actions workflow that runs SmartDoc on YAML files when a pull request is opened.
 
 .. code-block:: yaml
     :class: wrap-code

@@ -10,7 +10,7 @@ Follow the steps below to install SmartDoc on your system.
 Prerequisites
 -------------
 
-* An OpenAI API key from `OpenAI <https://platform.openai.com/signup>`_
+* An OpenAI API key from `OpenAI <https://openai.com/api/>`_
 * pip 
 * Python 3.10 or later 
 
@@ -53,7 +53,7 @@ Replace ``your_api_key_here`` with your actual OpenAI API key.
 Step 5: Verify the installation
 -------------------------------
 
-To verify that SmartDoc is installed correctly, simply run the following command:
+To verify that SmartDoc is installed correctly, run the following command:
 
 .. code-block:: bash
 
