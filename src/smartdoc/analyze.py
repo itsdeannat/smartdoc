@@ -27,7 +27,7 @@ def find_file(path: str):
         print(f"{path}")
 
 
-def analyze(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")], focus: Annotated[str, typer.Option(help="Restricts the analysis to a specific metric")] = "", fail_on: Annotated[list[str], typer.Option("--fail-on", help="Failure criteria")] = ""):
+def analyze(file: Annotated[str, typer.Argument(help="Path to the OpenAPI Specification file to be checked")], focus: Annotated[str, typer.Option(help="Restricts the analysis to a specific metric")] = "", fail_on: Annotated[list[str], typer.Option("--fail-on", help="Failure criteria")] = None):
     """
     Analyzes an OpenAPI Specification (OAS) file for quality and completeness using an LLM. Users can specify a focus area for the analysis, such as descriptions.
     """
